@@ -1,0 +1,113 @@
+@import url('https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Shadows+Into+Light+Two&display=swap');
+
+* {
+   margin: 0; 
+   padding: 0;
+   font-family: 'Shadows Into Light Two', cursive;
+}
+
+html, body {
+   width: 100%;
+   height: 100%;
+   background-image: linear-gradient;
+   background-repeat: no-repeat;
+   background-size: auto;
+}
+
+header{
+   display: flex;
+   justify-content: center;
+   flex-wrap: wrap;
+   width: 100%;
+   background-image: linear-gradient(#FF4B52, #FF556C, #FF5B7B);
+   background-repeat: no-repeat;
+   background-size: auto;
+}
+ 
+header h1{
+   font-family: 'Kaushan Script', cursive;
+   width: 100%;
+   text-align: center;
+   padding: 5rem;
+   color: #fff;
+   font-size: 4rem;
+}
+ 
+header div img{
+   width: 15%;
+   margin-left: auto;
+   position: absolute;
+   top: 0;
+   right: 150px;
+}
+
+header form{
+   width: 100%;
+   display: flex;
+   justify-content: center;
+   padding: 0 3rem 3rem 3rem;
+}
+ 
+header form input{
+   width: 60%;
+   padding: .5rem;
+   font-size: 1.5rem;
+   border: 1px solid #998984;
+   outline: none;
+}
+ 
+header form button{
+   border: 1px solid #998984;
+   background-color: #fff;
+   color: #998984;
+   padding: .5rem;
+   font-size: 1.2rem;
+   font-weight: 600;
+   cursor: pointer;
+   transition: .3s ease-out;
+   width: 10rem;
+}
+ 
+header form button:hover{
+   background-color: #FF768C;
+   border: 1px solid #fff;
+}
+
+section a{
+   display: block;
+   margin-left: auto;
+   text-decoration: none;
+   color: #FF4268;
+   font-size: 1.5rem;
+   transition: .3s ease-out;
+   width: 10rem;
+}
+ 
+section a:hover{
+   color: #B32E49;
+}
+ 
+section{
+   padding: 2rem;
+   padding-left: 10rem;
+   padding-right: 10rem;
+}
+ 
+section ul{
+   list-style: none;
+   padding-top: 2rem;
+}
+ 
+section ul li{
+   padding: 1rem;
+   cursor: pointer;
+   border-bottom: .1rem solid #998984;
+   font-size: 1.5rem;
+   transition: .3s ease-out;
+}
+ 
+section ul li:hover{
+   background-color: #EDD7CE;
+}
