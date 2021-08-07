@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, redirect
+from flask import Flask, render_template, request, redirect, flash
 from flask_sqlalchemy import SQLAlchemy
 
 app = Flask(__name__)
@@ -28,25 +28,25 @@ def new():
       )
    db.session.add(tarefas)
    db.session.commit()
-   # flash('Tarefa criada!')
+   flash('Tarefa criada!')
    return redirect('/')
 
-# @app.route('/edit/<id>', methods=['GET','POST'])
-# def edit(id):
-#    tarefa = Tarefas.query.get(id)
-#    if request.method == 'POST':
-#       tarefa.item = request.form['item']
-#       db.session.commit()
-#       return redirect('/')
-#    return render_template('index.html', tarefa=tarefa)
+@app.route('/edit/<id>', methods=['GET','POST'])
+def edit(id):
+   tarefa = Tarefas.query.get(id)
+   if request.method == 'POST':
+      tarefa.item = request.form['item']
+      db.session.commit()
+      return redirect('/')
+   return render_template('index.html', tarefa=tarefa)
 
-# @app.route('/delete/<id>')
-# def delete(id):
-#    tarefa = Tarefas.query.get(id)
-#    db.session.delete(tarefa)
-#    db.session.commit()
-#    flash('Tarefa apagada com sucesso')
-#    return redirect('/')
+@app.route('/delete/<id>')
+def delete(id):
+   tarefa = Tarefas.query.get(id)
+   db.session.delete(tarefa)
+   db.session.commit()
+   flash('Tarefa excluída')
+   return redirect('/')
 
 @app.route('/clear')
 def clear():
@@ -55,6 +55,7 @@ def clear():
       itens = Tarefas.query.get(i.id)
       db.session.delete(itens)
       db.session.commit()
+   flash('Todas as tarefas foram excluídas')
    return redirect('/')
 
 if __name__ == '__main__':

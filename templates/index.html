@@ -19,18 +19,32 @@
       
         <form action="/new" method="POST">
            <input type="text" name="item" id="item" placeholder="Adicione uma tarefa">
-           <button type="submit">Adicionar</button>
+           <button id="add" type="submit">Adicionar</button>
         </form>
     </header>
-  
+
+    <article id="msg">
+        {% with messages = get_flashed_messages() %}
+        {% if messages %}
+        <ul class=flashes>
+            {% for message in messages %}
+            <li>{{ message }}</li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+        {% endwith %}
+    </article>
+
     <section>
+        {% if tarefas != [] %}
         <a href="/clear">Limpar Lista</a>
+        {% endif %}
+
         {% for i in tarefas %}
         <ul>
             <li class="itens"> {{i.item}}
-                <div id="edit">
-                    <a href="/edit/{{i.id}}"><i class="uil uil-edit"></i></a>
-                    <a href="/{{i.id}}"><i class="uil uil-x"></i></a>
+                <div id="delete">
+                    <a href="/delete/{{i.id}}"><i class="uil uil-x"></i></a>
                 </div>
             </li>
         </ul>
@@ -38,16 +52,6 @@
         {% endfor %}
     </section>
 
-        {% if tarefas != [] %}
-        <a href="/clear">Limpar Lista</a>
-        {% endif %}
-   
-        <ul>
-            {% for item in tarefas %}
-            <li class="itens"> {{item}} </li>
-            {% endfor %}
-        </ul>
-    </section>
     <script src="../static/js/script.js"></script>
 </body>
 </html>
