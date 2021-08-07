@@ -4,6 +4,7 @@
    <meta charset="UTF-8">
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
    <link rel="stylesheet" href="../static/css/style.css">
    <title>Lista de Tarefas</title>
 </head>
@@ -23,16 +24,20 @@
     </header>
   
     <section>
-        {% if tarefas != [] %}
         <a href="/clear">Limpar Lista</a>
-        {% endif %}
-   
+        {% for i in tarefas %}
         <ul>
-            {% for item in tarefas %}
-            <li class="itens"> {{item}} </li>
-            {% endfor %}
+            <li class="itens"> {{i.item}}
+                <div id="edit">
+                    <a href="/edit/{{i.id}}"><i class="uil uil-edit"></i></a>
+                    <a href="/{{i.id}}"><i class="uil uil-x"></i></a>
+                </div>
+            </li>
         </ul>
+        
+        {% endfor %}
     </section>
+
     <script src="../static/js/script.js"></script>
 </body>
 </html>

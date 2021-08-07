@@ -101,6 +101,7 @@ section ul{
 }
  
 section ul li{
+   display: flex;
    padding: 1rem;
    cursor: pointer;
    border-bottom: .1rem solid #998984;
@@ -110,4 +111,10 @@ section ul li{
  
 section ul li:hover{
    background-color: #EDD7CE;
+}
+
+section div#edit{
+   display: block;
+   text-align: end;
+   width: 100%;
 }
