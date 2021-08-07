@@ -101,7 +101,10 @@ section ul{
 }
  
 section ul li{
+<<<<<<< HEAD
    display: flex;
+=======
+>>>>>>> 6bd969976b4ac2c087f5645685e67198ca7ce64d
    padding: 1rem;
    cursor: pointer;
    border-bottom: .1rem solid #998984;
@@ -111,10 +114,13 @@ section ul li{
  
 section ul li:hover{
    background-color: #EDD7CE;
+<<<<<<< HEAD
 }
 
 section div#edit{
    display: block;
    text-align: end;
    width: 100%;
+=======
+>>>>>>> 6bd969976b4ac2c087f5645685e67198ca7ce64d
 }
